@@ -1,0 +1,79 @@
+/*************************************************
+ * BATMAN ARKHAM POWER MENU - LEGENDARY EDITION ⚡
+ * أسطوري زي ما تحب
+ *************************************************/
+
+configuration {
+    show-icons:                     true;
+}
+
+* {
+    background:                     #0a0a0a;
+    background-color:               #0a0a0a;
+    text-color:                     #ffffff;
+    border-color:                   #f5c518;
+    selected-background:            #f5c518;
+    selected-text:                  #0a0a0a;
+    font:                           "FiraCode Nerd Font 14";
+}
+
+window {
+    transparency:                   "real";
+    location:                       center;
+    anchor:                         center;
+    fullscreen:                     false;
+    width:                          350;
+    height:                         320;
+    background-color:               rgba(10, 10, 10, 0.98);
+    border:                         2px;
+    border-color:                   #f5c518;
+    border-radius:                  28;
+    cursor:                         "default";
+}
+
+mainbox {
+    children:                       [ "listview" ];
+    spacing:                        0;
+    padding:                        20px;
+}
+
+listview {
+    columns:                        1;
+    lines:                          6;
+    spacing:                        8;
+    scrollbar:                      false;
+    fixed-height:                   true;
+}
+
+element {
+    padding:                        14px 20px;
+    margin:                         4px 0;
+    border-radius:                  50;
+    background-color:               #1a1a1a;
+    orientation:                    horizontal;
+}
+
+element normal.normal {
+    background-color:               #141414;
+    text-color:                     #ffffff;
+}
+
+element selected.normal {
+    background-color:               #f5c518;
+    text-color:                     #0a0a0a;
+    border:                         1px;
+    border-color:                   #ffffff;
+}
+
+element-icon {
+    size:                           28px;
+    margin-right:                   16px;
+    background-color:               transparent;
+}
+
+element-text {
+    background-color:               transparent;
+    text-color:                     inherit;
+    font-weight:                    bold;
+    font-size:                      15px;
+}

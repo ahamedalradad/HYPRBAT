@@ -1,0 +1,226 @@
+/* ==========================================================================
+   BATMAN ARKHAM STYLE FOR WAYBAR
+   Dark as Gotham, Yellow as Bat-Signal
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   GLOBAL SETTINGS
+   -------------------------------------------------------------------------- */
+* {
+    font-family: "FiraCode Nerd Font", "JetBrains Mono", monospace;
+    font-size: 13px;
+    font-weight: bold;
+    min-height: 0;
+}
+
+/* --------------------------------------------------------------------------
+   MAIN BAR (Top)
+   -------------------------------------------------------------------------- */
+window#waybar {
+    background: #0a0a0a;
+    border-bottom: 2px solid #f5c518;
+    color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   ALL MODULES (Common Style)
+   -------------------------------------------------------------------------- */
+#custom-appmenu,
+#bluetooth,
+#custom-powermenu,
+#workspaces,
+#clock,
+#pulseaudio,
+#network,
+#battery,
+#hyprland-language,
+#temperature {
+    padding: 0 12px;
+    margin: 4px 3px;
+    border-radius: 8px;
+    background: #1a1a1a;
+    border-bottom: 1px solid #f5c518;
+    transition: all 0.2s ease;
+}
+
+/* --------------------------------------------------------------------------
+   APP MENU (Arch Logo)
+   -------------------------------------------------------------------------- */
+#custom-appmenu {
+    font-size: 20px;
+    color: #f5c518;
+    background: #0a0a0a;
+    border-bottom: 2px solid #f5c518;
+    padding: 0 16px;
+    margin-left: 8px;
+}
+
+#custom-appmenu:hover {
+    background: #f5c518;
+    color: #0a0a0a;
+}
+
+/* --------------------------------------------------------------------------
+   WORKSPACES
+   -------------------------------------------------------------------------- */
+#workspaces button {
+    color: #555555;
+    padding: 0 6px;
+    border-radius: 6px;
+}
+
+#workspaces button.active {
+    color: #f5c518;
+    background: #21262d;
+    border-bottom: 2px solid #f5c518;
+}
+
+#workspaces button:hover {
+    color: #0a0a0a;
+    background: #f5c518;
+}
+
+/* --------------------------------------------------------------------------
+   CLOCK
+   -------------------------------------------------------------------------- */
+#clock {
+    font-size: 18px;
+    color: #f5c518;
+    background: #1a1a1a;
+}
+
+/* Second clock (minutes) */
+#clock#right {
+    font-size: 18px;
+    color: #f5c518;
+}
+
+/* --------------------------------------------------------------------------
+   BLUETOOTH
+   -------------------------------------------------------------------------- */
+#bluetooth {
+    color: #ffffff;
+}
+
+#bluetooth.disabled {
+    color: #888888;
+}
+
+#bluetooth.off {
+    color: #888888;
+}
+
+#bluetooth.connected {
+    color: #f5c518;
+}
+
+/* --------------------------------------------------------------------------
+   PULSEAUDIO (Volume)
+   -------------------------------------------------------------------------- */
+#pulseaudio {
+    color: #ffffff;
+}
+
+#pulseaudio.muted {
+    color: #f85149;
+}
+
+/* --------------------------------------------------------------------------
+   NETWORK
+   -------------------------------------------------------------------------- */
+#network {
+    color: #ffffff;
+}
+
+#network.disconnected {
+    color: #f85149;
+}
+
+/* --------------------------------------------------------------------------
+   BATTERY
+   -------------------------------------------------------------------------- */
+#battery {
+    color: #ffffff;
+}
+
+#battery.warning {
+    color: #d29922;
+}
+
+#battery.critical {
+    color: #f85149;
+    animation: blink 1s infinite;
+}
+
+#battery.charging {
+    color: #3fb950;
+}
+
+@keyframes blink {
+    to {
+        color: #0a0a0a;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   LANGUAGE (Keyboard Layout)
+   -------------------------------------------------------------------------- */
+#hyprland-language {
+    font-family: monospace;
+    font-weight: bold;
+    padding: 0 16px;
+    background: #1a1a1a;
+    border-bottom: 1px solid #f5c518;
+}
+
+/* --------------------------------------------------------------------------
+   TEMPERATURE
+   -------------------------------------------------------------------------- */
+#temperature {
+    color: #ffffff;
+}
+
+#temperature.critical {
+    color: #f85149;
+}
+
+/* --------------------------------------------------------------------------
+   POWER MENU
+   -------------------------------------------------------------------------- */
+#custom-powermenu {
+    color: #f5c518;
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+#custom-powermenu:hover {
+    background: #f85149;
+    color: #0a0a0a;
+}
+
+/* --------------------------------------------------------------------------
+   TOOLTIP
+   -------------------------------------------------------------------------- */
+tooltip {
+    background: #0a0a0a;
+    border: 1px solid #f5c518;
+    border-radius: 10px;
+    color: #f5c518;
+    font-size: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   HOVER EFFECTS (Glow like Bat-Signal)
+   -------------------------------------------------------------------------- */
+#pulseaudio:hover,
+#network:hover,
+#bluetooth:hover,
+#battery:hover,
+#temperature:hover {
+    text-shadow: 0 0 3px #f5c518;
+    border-bottom-color: #f5c518;
+}
+
+/* --------------------------------------------------------------------------
+   END OF BATMAN STYLE
+   -------------------------------------------------------------------------- */

@@ -1,0 +1,161 @@
+/**
+ * Batman Arkham Clipboard Theme
+ * for cliphist + Rofi
+ * LTR, no prompt text, clean 🦇
+ */
+
+/*****----- Configuration -----*****/
+configuration {
+    show-icons:                 false;
+    modi:                       "custom";
+}
+
+/*****----- Batman Colors -----*****/
+* {
+    background:                 #0a0a0a;
+    background-alt:             #1a1a1a;
+    foreground:                 #ffffff;
+    selected:                   #f5c518;
+}
+
+/*****----- Main Window -----*****/
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       650px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      2px solid;
+    border-radius:               20px;
+    border-color:                @selected;
+    background-color:            rgba(10, 10, 10, 0.96);
+    cursor:                      "default";
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+/*****----- Inputbar (Search) -----*****/
+inputbar {
+    enabled:                     true;
+    expand:                      false;
+    padding:                     12px 20px;
+    background-color:            @selected;
+    border-radius:               30px;
+    margin:                      16px 20px 0px 20px;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                     false;     /* إخفاء الـ prompt بالكامل */
+}
+
+entry {
+    enabled:                     true;
+    expand:                      true;
+    padding:                     8px 0px;
+    background-color:            transparent;
+    text-color:                  @background;
+    cursor:                      text;
+    placeholder:                 "🔍 Search clipboard history...";
+    placeholder-color:           rgba(10, 10, 10, 0.6);
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    font-size:                   13px;
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       8;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   true;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     4px;
+    margin:                      12px 20px 20px 20px;
+    padding:                     0px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+
+scrollbar {
+    handle-width:                6px;
+    handle-color:                @selected;
+    border-radius:               10px;
+    background-color:            @background-alt;
+}
+
+/*****----- Elements (each clipboard entry) -----*****/
+element {
+    enabled:                     true;
+    spacing:                     12px;
+    margin:                      2px 0px;
+    padding:                     12px 16px;
+    border:                      0px solid;
+    border-radius:               12px;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+    orientation:                 horizontal;
+    cursor:                      pointer;
+}
+
+element normal.normal {
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+}
+
+element selected.normal {
+    background-color:            @selected;
+    text-color:                  @background;
+    border-radius:               12px;
+}
+
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        0px;
+    cursor:                      inherit;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;    /* محاذاة النص لليسار */
+    font-size:                   13px;
+    font-family:                 "FiraCode Nerd Font";
+}
+
+/*****----- Message -----*****/
+error-message {
+    padding:                     15px;
+    border-radius:               12px;
+    background-color:            @background;
+    text-color:                  @selected;
+}
+
+textbox {
+    background-color:            @background;
+    text-color:                  @foreground;
+}

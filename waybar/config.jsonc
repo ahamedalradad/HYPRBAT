@@ -1,0 +1,109 @@
+{
+  "layer": "top",
+  "width": 1000,
+  "modules-left": ["custom/appmenu", "pulseaudio", "network", "bluetooth"],
+  "modules-center": ["clock", "hyprland/workspaces", "clock#right"],
+  "modules-right": ["battery", "hyprland/language", "temperature", "custom/powermenu"],
+
+  "clock": {
+    "format": "{:%I}"
+  },
+  "clock#right": {
+    "format": "{:%M}"
+  },
+
+"custom/appmenu": {
+    "format": " ",
+    "on-click": "rofi -show drun -theme ~/.config/rofi/type-2/arkham.rasi",
+    "tooltip": true,
+    "tooltip-format": "Application Menu\nClick to open"
+},
+"bluetooth": {
+    "format": "󰂯 {status}",
+    "format-disabled": "󰂲 Disabled",
+    "format-off": "󰂲 Off",
+    "format-connected": "󰂯 Connected",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "on-click": "blueman-manager",
+    "on-click-right": "bluetoothctl power toggle"
+},
+
+  "custom/powermenu": {
+    "format": "󰐥 ",
+    "on-click": "rofi -show power-menu -modi power-menu:~/.config/rofi/powermenu.sh -theme ~/.config/rofi/type-2/arkham_power.rasi",
+    "tooltip": true,
+    "tooltip-format": "Power Menu"
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "󰇄",
+      "2": "󰇄",
+      "3": "󰇄",
+      "4": "󰇄",
+      "5": "󰇄",
+      "6": "󰇄",
+      "7": "󰇄",
+      "8": "󰇄",
+      "9": "󰇄",
+      "10": "󰇄"
+    },
+    "persistent_workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
+
+  "battery": {
+    "bat": "BAT0",
+    "interval": 60,
+    "format": " {icon} {capacity}%",
+    "format-icons": {
+      "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
+    }
+  },
+
+  "pulseaudio": {
+    "format": " {icon} {volume}%",
+    "format-bluetooth": " {icon} {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "default": ["󰖀", "󰕾"]
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol",
+    "ignored-sinks": ["Easy Effects Sink"]
+  },
+
+  "network": {
+    "format-wifi": "󰤨  {signalStrength}%",
+    "format-ethernet": "{ipaddr}/{cidr}",
+    "format-linked": "{ifname} (لا يوجد IP)",
+    "format-disconnected": "󰤭",
+    "tooltip-format": "{essid} ({signalStrength}%)",
+    "on-click": "kitty -e nmtui",
+    "on-right-click": "~/.config/scripts/AirplaneMode.sh"
+  },
+
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "EN",
+    "format-ar": "AR",
+    "format-other": "{}"
+  },
+
+  "cpu-temperature": {
+    "format": "{temperature}°C",
+    "interval": 5,
+    "thermal-zone": 0
+  }
+}
